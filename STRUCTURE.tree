@@ -70,9 +70,6 @@ JARVIS-MK1/
 ├── docs/prompts/
 │   └── JARVIS_MK1_Lite_Technical_Specification.md  # Technical specification
 │
-├── .github/workflows/
-│   └── test.yml                    # CI/CD pipeline (Python 3.11/3.12, Black, Ruff, MyPy)
-│
 ├── pyproject.toml                  # Poetry project config + dev tools
 ├── poetry.toml                     # Poetry settings
 ├── requirements.txt                # Frozen pip dependencies
