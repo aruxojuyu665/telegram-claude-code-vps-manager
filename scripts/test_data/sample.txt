@@ -1,0 +1,15 @@
+Hello JARVIS!
+
+This is a test file to verify file handling functionality.
+The bot should extract this text and send it to Claude Code for analysis.
+
+Key test points:
+1. File should be downloaded correctly
+2. Text content should be extracted
+3. Content should be forwarded to Claude
+4. Claude should respond with analysis
+
+If you can read this message and analyze it, the file handling is working correctly!
+
+Test timestamp: 2025-12-31
+Version: 0.13.0

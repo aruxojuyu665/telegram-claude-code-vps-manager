@@ -1,0 +1,22 @@
+[Unit]
+Description=JARVIS MK1 Lite DEV - Telegram Interface for Claude Code (Development Instance)
+After=network.target
+
+[Service]
+Type=simple
+# Run as root for maximum Claude Code autonomy
+User=root
+Group=root
+WorkingDirectory=/opt/jarvis-dev
+Environment=PATH=/opt/jarvis-dev/.venv/bin:/usr/local/bin:/usr/bin:/root/.local/bin
+ExecStart=/opt/jarvis-dev/.venv/bin/python -m jarvis_mk1_lite
+Restart=always
+RestartSec=10
+
+# No restrictions - full system access for Claude Code
+# NoNewPrivileges=false (default)
+# ProtectSystem=false (default)
+# ProtectHome=false (default)
+
+[Install]
+WantedBy=multi-user.target

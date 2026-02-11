@@ -1,0 +1,19 @@
+{
+  "name": "JARVIS File Handling Test",
+  "version": "0.13.0",
+  "description": "Sample JSON file for E2E testing",
+  "features": [
+    "Text extraction",
+    "JSON parsing",
+    "Claude integration"
+  ],
+  "config": {
+    "enabled": true,
+    "max_size_mb": 20,
+    "supported_formats": [".txt", ".md", ".py", ".json", ".pdf"]
+  },
+  "metadata": {
+    "created": "2025-12-31",
+    "author": "JARVIS Team"
+  }
+}

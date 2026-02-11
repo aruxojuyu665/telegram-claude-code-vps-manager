@@ -1,0 +1,89 @@
+JARVIS-MK1/
+├── src/jarvis_mk1_lite/            # Core application (~7,238 LOC)
+│   ├── __init__.py                 # Package exports and version
+│   ├── __main__.py                 # Entry point + structlog configuration
+│   ├── bot.py                      # Telegram handlers (aiogram 3.x)
+│   ├── bridge.py                   # Claude Code CLI integration (subprocess)
+│   ├── config.py                   # Pydantic Settings (SecretStr, validation)
+│   ├── safety.py                   # Socratic Gate — 4-level risk assessment
+│   ├── metrics.py                  # Health status, rate limiting, uptime
+│   ├── chunker.py                  # Smart message splitting (Telegram 4096 limit)
+│   ├── file_processor.py           # PDF/text file extraction (PyMuPDF)
+│   ├── file_sender.py              # File download/upload management
+│   ├── transcription.py            # Voice transcription (Telethon + Premium API)
+│   └── exceptions.py               # Custom exception hierarchy
+│
+├── tests/                          # Test suite (1008+ unit/integration + 20+ live E2E)
+│   ├── conftest.py                 # Shared pytest fixtures
+│   ├── test_bot.py                 # Bot handler tests (~220 tests)
+│   ├── test_bridge.py              # Claude Bridge tests (~95 tests)
+│   ├── test_metrics.py             # Metrics & rate limiting tests (~90 tests)
+│   ├── test_safety.py              # Socratic Gate tests (~70 tests)
+│   ├── test_transcription.py       # Voice transcription tests (~90 tests)
+│   ├── test_file_processor.py      # File processing tests (~55 tests)
+│   ├── test_file_sender.py         # File sender tests
+│   ├── test_chunker.py             # Message chunking tests (~55 tests)
+│   ├── test_config.py              # Configuration tests (~16 tests)
+│   ├── test_integration.py         # Multi-module integration tests (~35 tests)
+│   ├── test_integration_e2e.py     # Mocked E2E tests (~77 tests)
+│   ├── test_main.py                # Entry point tests (~27 tests)
+│   ├── test_bot_v120.py            # Bot v1.2.0 multitasking tests
+│   ├── test_main_v120.py           # Main v1.2.0 tests
+│   ├── test_retry.py               # Retry logic tests
+│   ├── test_verbose.py             # Verbose mode tests
+│   ├── README.md                   # Test documentation
+│   └── live_e2e/                   # Live E2E tests (real Telegram + Claude)
+│       ├── config.py               # E2E test configuration
+│       ├── conftest.py             # Telethon fixtures
+│       ├── helpers.py              # Test utilities
+│       ├── test_commands.py        # /start, /help, /status, /new, /metrics
+│       ├── test_safety.py          # Socratic Gate live tests
+│       ├── test_advanced.py        # Wide context, file upload, sessions
+│       ├── test_file_download.py   # File download live tests
+│       ├── test_multitasking.py    # Named session management
+│       ├── test_model_switching.py # Per-session model switching
+│       ├── test_model_switching_live.py # Live model switching tests
+│       └── test_verbose.py         # Verbose output streaming
+│
+├── scripts/                        # Utility and test scripts
+│   ├── test_voice.py               # Voice transcription E2E test
+│   ├── test_files.py               # File handling tests
+│   ├── test_files_e2e.py           # File E2E tests
+│   ├── test_wide_context.py        # Wide context tests
+│   ├── README.md                   # Script documentation
+│   └── test_data/                  # Sample test files
+│       ├── sample.json
+│       ├── sample.md
+│       ├── sample.py
+│       └── sample.txt
+│
+├── deploy/                         # Production deployment
+│   ├── install.sh                  # VPS installation script
+│   ├── jarvis.service              # Systemd unit (production)
+│   ├── jarvis-dev.service          # Systemd unit (dev)
+│   ├── healthcheck.sh              # Service health check
+│   └── logrotate.conf              # Log rotation configuration
+│
+├── prompts/
+│   └── system.md                   # Claude system prompt (VPS context)
+│
+├── docs/prompts/
+│   └── JARVIS_MK1_Lite_Technical_Specification.md  # Technical specification
+│
+├── .github/workflows/
+│   └── test.yml                    # CI/CD pipeline (Python 3.11/3.12, Black, Ruff, MyPy)
+│
+├── pyproject.toml                  # Poetry project config + dev tools
+├── poetry.toml                     # Poetry settings
+├── requirements.txt                # Frozen pip dependencies
+├── .env.example                    # Environment template
+├── .env.production.example         # Production environment template
+├── .gitignore                      # Git ignore rules
+│
+├── README.md                       # Project documentation
+├── DEPLOYMENT.md                   # Production deployment guide
+├── CHANGELOG.md                    # Version history
+├── STATUS.md                       # Project status and coverage
+├── MODEL_SWITCHING_GUIDE.md        # Per-session model switching guide
+├── LICENSE                         # MIT License
+└── STRUCTURE.tree                  # This file — project structure
